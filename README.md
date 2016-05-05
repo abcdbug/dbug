@@ -3,3 +3,6 @@
 
 Each meeting will get its folder where the material that was discussed will be available.
 Feel free to post issues/comments etc.
+
+----------------------------
+[Applied Bioinformatics Core](https://abc.med.cornell.edu)
