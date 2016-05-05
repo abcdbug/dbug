@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/abcdbug/dbug/master/WCM_logo.png)
+<img src="https://raw.githubusercontent.com/abcdbug/dbug/master/WCM_logo.png" alt="WCM" style="height: 20px;"/>
 
 # d:bug
 > Data Analysis & Bioinformatics User Group @ Weill Cornell Medicine
