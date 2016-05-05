@@ -1,0 +1,116 @@
+---
+author: "Jinhyun Ju"
+output: html_document
+---
+
+d:BUG (Data Analysis & Bioinformatics User Group) 
+======
+
+HDF5 Files
+------
+
+-- 5 May 2016
+
+-- Author: Jin Hyun Ju (jj328@cornell.edu)
+
+### R Packages for handling HDF5 files
+
+There are two packages for HDF5 files in R, 
+
++ `h5` (https://cran.r-project.org/web/packages/h5/index.html) on CRAN and 
+
++ `rhdf5` 
+(http://bioconductor.org/packages/release/bioc/html/rhdf5.html) on bioconductor. 
+
+I've only used `rhdf5` to this point, since it seemed to have better documentation and a bit more of an "R-friendly-syntax", but after using the `h5py` module in python I found the syntax of the `h5` package more similar to `h5py` than `rhdf5`. So if you want to minimize syntax confusions between python and R using `h5` might be a better idea.
+
+**1. Installing the `rhdf5` package**
+
+```{r install_rhdf5, eval = FALSE,comment=NA, fig.align='center'}
+source("https://bioconductor.org/biocLite.R")
+biocLite("rhdf5")
+```
+
+**2. Creating an empty file**
+
+To save data to an hdf5 file you have to first create an empty file.
+
+```{r create_rhdf5 ,comment=NA, fig.align='center'}
+
+library(rhdf5)
+h5createFile("r_testfile.h5")
+
+```
+
+**3. Creating groups within a file**
+
+There are two types of objects in an HDF5 files. Groups are like folders providing a path to the datasets which hold the saved data. Creating groups within a file is quite straight forward, but one thing to keep in mind is that in order to create a subgroup you have to define the parent group first. 
+
+```{r groups1_rhdf5 ,comment=NA, fig.align='center'}
+
+h5createGroup("r_testfile.h5", "phenotypes")
+h5createGroup("r_testfile.h5", "genotypes")
+
+```
+
+To create subgroups, you simply need to separate the parent and the child group by a `/`.
+
+```{r groups2_rhdf5 ,comment=NA, fig.align='center'}
+h5createGroup("r_testfile.h5", "phenotypes/chromosome")
+
+h5createGroup("r_testfile.h5", "genotypes/position")
+
+```
+
+If you are like me and have limited short term memory, you can easily inspect the whole structure of the h5 file with `h5ls()`
+
+```{r ls_rhdf5 ,comment=NA, fig.align='center'}
+
+h5ls("r_testfile.h5")
+
+```
+
+**4. Saving data**
+
+Now let's see how to save and retrieve data. One way to save your data is to directly save the object in memory using `h5write()`. Note that the last entry in the path is the name of the dataset to be saved. 
+
+```{r write_rhdf5 ,comment=NA, fig.align='center'}
+
+# creating meaningless data
+pheno <- matrix(rnorm(100),nrow = 4)
+geno_pos <- sample(1:1000, 50)
+
+h5write(pheno, "r_testfile.h5", "phenotypes/expr")
+h5write(geno_pos, "r_testfile.h5", "genotypes/position/chr1")
+
+```
+
+You can also pre-define a dataset and write data to it in parts. Additionally, you can compress and chunk the dataset for space efficient saving and faster I/O.
+
+```{r write_part_rhdf5 ,comment=NA, fig.align='center'}
+h5createDataset(file = "r_testfile.h5", "genotypes/values", dim = c(4,10), storage.mode = 'integer',
+                chunk = c(4,1), level = 2)
+```
+
+To read and write parts of the data, you have to specify the subset of the dataset to read/write by the index option. 
+
+```{r read_write_part_rhdf5 ,comment=NA, fig.align='center'}
+
+h5ls("r_testfile.h5")
+
+geno_values <- matrix(sample(c(0,1,2),40, replace = TRUE),nrow = 4)
+
+h5write(geno_values[,1], "r_testfile.h5", "genotypes/values", index = list(1:4,1))
+
+h5read("r_testfile.h5", "genotypes/values")
+h5read("r_testfile.h5", "genotypes/values", index = list(1:4,1))
+
+```
+
+After you are done with one file don't forget to close it. 
+
+```{r close_rhdf5 ,comment=NA, fig.align='center'}
+
+H5close()
+
+```
