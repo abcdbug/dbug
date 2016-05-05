@@ -1,5 +1,3 @@
-<img src="https://raw.githubusercontent.com/abcdbug/dbug/master/WCM_logo.png" alt="WCM" style="height: 20px;"/>
-
 # d:bug
 > Data Analysis & Bioinformatics User Group @ Weill Cornell Medicine
 
@@ -15,3 +13,6 @@ Feel free to post issues/comments etc.
 
 ----------------------------
 [Applied Bioinformatics Core](https://abc.med.cornell.edu)
+
+<img src="https://raw.githubusercontent.com/abcdbug/dbug/master/WCM_logo.png" alt="WCM" style="height: 20px;"/>
+
