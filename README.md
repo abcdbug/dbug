@@ -3,7 +3,7 @@ Each meeting will get its folder where the material that was discussed will be a
 
 Feel free to post issues/comments etc.
 
-> If anyone has suggestions on how to discuss / suggest future topics here, please do share.
+For the collection of future topics, see this [issue here](https://github.com/abcdbug/dbug/issues/1).
 
 ## Past presentations
 
