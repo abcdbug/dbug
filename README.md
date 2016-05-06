@@ -1,10 +1,9 @@
-![](https://raw.githubusercontent.com/abcdbug/dbug/master/WCM_logo.png)
-
-# d:bug 
-##_Data Analysis & Bioinformatics User Group
+# `d:bug` | Data Analysis & Bioinformatics User Group 
 Each meeting will get its folder where the material that was discussed will be available.
 
 Feel free to post issues/comments etc.
+
+> If anyone has suggestions on how to discuss / suggest future topics here, please do share.
 
 ## Past presentations
 
@@ -14,3 +13,6 @@ Feel free to post issues/comments etc.
 
 ----------------------------
 [Applied Bioinformatics Core](https://abc.med.cornell.edu)
+
+<img src="https://raw.githubusercontent.com/abcdbug/dbug/master/WCM_logo.png" alt="WCM" style="height: 20px;"/>
+
