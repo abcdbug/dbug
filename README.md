@@ -10,11 +10,12 @@ For the collection of future topics, see this [issue here](https://github.com/ab
 | Date | Topic | Presenter |
 |------|-------|-----------|
 |2016-05-05 | HDF5: Managing Large Data Without Losing Your Mind | [Jin-Hyun Ju](http://mezeylab.cb.bscb.cornell.edu/PeopleDetail.aspx?Y=Jinhyun%20Ju) |
-|2016-06--9 | Makefiles: Making data analysis reproducible | [Paul Zumbo](https://abc.med.cornell.edu/) |
+|2016-06-09 | Makefiles: Making data analysis reproducible | [Paul Zumbo](https://abc.med.cornell.edu/) |
 
 ## Useful links
 
 * [http://explainshell.com/](http://explainshell.com/) --> get feedback on your bash code!
+* [https://www.cheatography.com/bavo-van-achte/cheat-sheets/gnumake/pdf/](https://www.cheatography.com) --> gnumake cheatsheet
 
 ----------------------------
 | [Applied Bioinformatics Core](https://abc.med.cornell.edu) | <img src="https://raw.githubusercontent.com/abcdbug/dbug/master/WCM_logo.png" alt="WCM" style="height: 20px;"/> |
