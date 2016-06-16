@@ -1,0 +1,19 @@
+BWA = /usr/local/bin/bwa
+SAMTOOLS = /usr/local/bin/samtools
+REF = /usr/local/ref/e_coli.fa
+
+FASTQFILES = $(wildcard *.fastq.gz)
+
+default: $(FASTQFILES:.fastq.gz=.bam)
+
+test: test.sh
+	bash $^
+
+%.sai: %.fastq.gz
+	$(BWA) aln $(REF) $< > $@
+
+%.sam: %.sai %.fastq.gz
+	$(BWA) samse $(REF) $^ > $@
+
+%.bam: %.sam
+	$(SAMTOOLS) view -bS $< > $@

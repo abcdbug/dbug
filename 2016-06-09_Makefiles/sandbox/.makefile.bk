@@ -1,0 +1,10 @@
+CXX = g++
+CXXFLAGS = -O2
+
+default: hello goodbye
+
+hello: hello.cpp
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+goodbye: goodbye.cpp
+	$(CXX) $(CXXFLAGS) $< -o $@
