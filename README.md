@@ -1,4 +1,7 @@
 # `d:bug` | Data Analysis & Bioinformatics User Group 
+
+We meet on select Thursdays, 1:30 pm in the seminar room of the Department for Physiology & Biophysics on the 5th floor in the main WCM building. If you would like to receive more information and make sure you get the announcements of the next meeting straight into your inbox, send an email to the [Applied Bioinformatics Core](https://abc.med.cornell.edu).
+
 Each meeting will get its folder where the material that was discussed will be available.
 
 Feel free to post issues/comments etc.
