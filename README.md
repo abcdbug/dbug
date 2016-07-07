@@ -12,7 +12,7 @@ For the collection of future topics, see this [issue here](https://github.com/ab
 
 | Date | Topic | Presenter |
 |------|-------|-----------|
-|2016-07-07 | [Jupyter Notebooks: Seamlessly combining research and documentation](https://github.com/abcdbug/dbug/tree/master/2016-07-07_JupyterNotebooks) | Greg Putzel |
+|2016-07-07 | [Jupyter Notebooks: Seamlessly combining research and documentation](https://github.com/abcdbug/dbug/tree/master/2016-07-07_JupyterNotebooks) | Greg Putzel (<grp2009@med.cornell.edu>)  |
 |2016-06-09 | [Makefiles: Making data analysis reproducible](https://github.com/abcdbug/dbug/tree/master/2016-06-09_Makefiles) | [Paul Zumbo](https://abc.med.cornell.edu/) |
 |2016-05-05 | [HDF5: Managing Large Data Without Losing Your Mind](https://github.com/abcdbug/dbug/tree/master/2016-05-05_HDF5-Format) | [Jin-Hyun Ju](http://mezeylab.cb.bscb.cornell.edu/PeopleDetail.aspx?Y=Jinhyun%20Ju) |
 
@@ -24,3 +24,4 @@ For the collection of future topics, see this [issue here](https://github.com/ab
 ----------------------------
 | [Applied Bioinformatics Core](https://abc.med.cornell.edu) | <img src="https://raw.githubusercontent.com/abcdbug/dbug/master/WCM_logo.png" alt="WCM" style="height: 20px;"/> |
 |---------------|---------------|
+
