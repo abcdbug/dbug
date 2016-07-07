@@ -20,3 +20,5 @@ To __generate a Jupyter notebook__, do the following:
 
  This will open a session in your web browser.
  On the right hand side, you should see a button saying "new" --> use it to start your first notebook which will be saved as an `.ipynb` file.
+ 
+ ![Jupyter screenshot](https://raw.githubusercontent.com/abcdbug/dbug/master/2016-07-07_JupyterNotebooks/jupyter_start.png)
