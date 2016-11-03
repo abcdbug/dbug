@@ -12,7 +12,8 @@ For the collection of future topics, see this [issue here](https://github.com/ab
 
 | Date | Topic | Presenter |
 |------|-------|-----------|
-|2016-09 | [Mastering `git`](https://github.com/abcdbug/team-up-with-git) | [John Richardson](mailto:john@physbio-tech.net) |
+|2016-11 | Using Docker | Evan Biederstedt |
+|2016-09-22 | [Mastering `git`](https://github.com/abcdbug/team-up-with-git) | [John Richardson](mailto:john@physbio-tech.net) |
 |2016-08-18 | [R's `data.table` package: Slicing large tables the Ninja way!](https://github.com/alexpenson/data.table.examples) | [Alex Penson](https://www.mskcc.org/research-areas/labs/members/alexander-penson) |
 |2016-07-07 | [Jupyter Notebooks: Seamlessly combining research and documentation](https://github.com/abcdbug/dbug/tree/master/2016-07-07_JupyterNotebooks) | [Greg Putzel](mailto://grp2009@med.cornell.edu)  |
 |2016-06-09 | [Makefiles: Making data analysis reproducible](https://github.com/abcdbug/dbug/tree/master/2016-06-09_Makefiles) | [Paul Zumbo](https://abc.med.cornell.edu/) |
