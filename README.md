@@ -12,13 +12,13 @@ For the collection of future topics, see this [issue here](https://github.com/ab
 
 | Date | Topic | Presenter |
 |------|-------|-----------|
-|2016-12-07 | R packages    | Khagay Nagdimov |
+|2016-12-07 | [How to create R packages](https://github.com/abcdbug/dbug/tree/master/R_Packages)    | [Khagay Nagdimov](mailto:khagay@nyu.edu) |
 |2016-11-17 | Using Docker | [Evan Biederstedt](mailto:ebiederstedt@nygenome.org) |
 |2016-09-22 | [Mastering `git`](https://github.com/abcdbug/team-up-with-git) | [John Richardson](mailto:john@physbio-tech.net) |
 |2016-08-18 | [R's `data.table` package: Slicing large tables the Ninja way!](https://github.com/alexpenson/data.table.examples) | [Alex Penson](https://www.mskcc.org/research-areas/labs/members/alexander-penson) |
-|2016-07-07 | [Jupyter Notebooks: Seamlessly combining research and documentation](https://github.com/abcdbug/dbug/tree/master/2016-07-07_JupyterNotebooks) | [Greg Putzel](mailto://grp2009@med.cornell.edu)  |
-|2016-06-09 | [Makefiles: Making data analysis reproducible](https://github.com/abcdbug/dbug/tree/master/2016-06-09_Makefiles) | [Paul Zumbo](https://abc.med.cornell.edu/) |
-|2016-05-05 | [HDF5: Managing Large Data Without Losing Your Mind](https://github.com/abcdbug/dbug/tree/master/2016-05-05_HDF5-Format) | [Jin-Hyun Ju](http://mezeylab.cb.bscb.cornell.edu/PeopleDetail.aspx?Y=Jinhyun%20Ju) |
+|2016-07-07 | [Jupyter Notebooks: Seamlessly combining research and documentation](https://github.com/abcdbug/dbug/tree/master/JupyterNotebooks) | [Greg Putzel](mailto://grp2009@med.cornell.edu)  |
+|2016-06-09 | [Makefiles: Making data analysis reproducible](https://github.com/abcdbug/dbug/tree/master/Makefiles) | [Paul Zumbo](https://abc.med.cornell.edu/) |
+|2016-05-05 | [HDF5: Managing Large Data Without Losing Your Mind](https://github.com/abcdbug/dbug/tree/master/HDF5-Format) | [Jin-Hyun Ju](http://mezeylab.cb.bscb.cornell.edu/PeopleDetail.aspx?Y=Jinhyun%20Ju) |
 
 ## Useful links
 
