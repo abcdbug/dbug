@@ -12,7 +12,7 @@ For the collection of future topics, see this [issue here](https://github.com/ab
 
 | Date | Topic | Presenter |
 |------|-------|-----------|
-| 2017-04-12 | Bioinformatic Applications of Cytoscape | Peter Oxley |
+| 2017-04-13 | Bioinformatic Applications of Cytoscape | Peter Oxley |
 | 2017-03-23 | [Building networks using Cytoscape](https://github.com/abcdbug/dbug/tree/master/Cytoscape) | Michael Bales |
 |2016-12-07 | [How to create R packages](https://github.com/abcdbug/dbug/tree/master/R_Packages)    | [Khagay Nagdimov](mailto:khagay@nyu.edu) |
 |2016-11-17 | Using Docker | [Evan Biederstedt](mailto:ebiederstedt@nygenome.org) |
