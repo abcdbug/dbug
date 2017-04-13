@@ -102,8 +102,16 @@ key column for network: Ensemble
 63) select the downwards-pointing arrows above the color gradient; select "Node fill color"; choose your favorite colors
 64) bonus task: change the border color to indicate the adjusted P value
 
-## GO analysis
-65) 
+## (H) GO analysis
+65) go to App Manager and install "BiNGO" and "GOlorize"
+66) using cell formulae, re-assign the values of column "name" to equal that of "first-gene"
+67) remove the style mapping for box fill in the style tab of the control panel
+68) highlight the network/subnetwork you wish to analyze
+69) select GOlorize from the app menu
 
-## Export images
+
+
+answer to 66: =$first_gene
+
+## (I) Export images
  
