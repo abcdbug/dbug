@@ -131,6 +131,7 @@ key column for network: Ensemble
 56) confirm that the node table for the MAPK classical network now includes all the columns from the GSE experiment.
 
 ## (G) Color genes according to expression
+
 57) select the style tab in the control panel (left window)
 58) select fill color
 59) change the column to "logFC"
@@ -139,6 +140,8 @@ key column for network: Ensemble
 62) select "set min and max..."; change to -1 and 1.
 63) select the downwards-pointing arrows above the color gradient; select "Node fill color"; choose your favorite colors
 64) bonus task: change the border color to indicate the adjusted P value
+
+![hopefully, this is what you now see](https://github.com/oxpeter/dbug/blob/cytoscape_102/Cytoscape/exercise_G.png)
 
 ## (H) GO analysis with BiNGO and GOlorize
 _A very helpful tutorial for GOlorize can be found [here](https://github.com/schwikowskilab/GOlorize/wiki). The BiNGO user guide can be found [here](https://www.psb.ugent.be/cbd/papers/BiNGO/User_Guide.html)._
@@ -163,6 +166,9 @@ _BiNGO accesses annotation and ontology databases, that are not necessarily repr
 79) select "Auto-Colors" to color the nodes
 80) click on any color in the list to bring up a color selector, so you can manually edit the colors.
 
+![hopefully, this is what you now see](https://github.com/oxpeter/dbug/blob/cytoscape_102/Cytoscape/exercise_H1.png)
+
+
 __View and modify the enriched GO hierarchy__
 
 81) select the GO term network ("Bingo Cluster 1", unless you renamed it at step 71)
@@ -171,6 +177,8 @@ _All GO terms that were significanly enriched (after any multiple testing correc
 
 82) select all nodes 
 83) select Layout > yFiles Layouts > Hierarchic
+ 
+![hopefully, this is what you now see](https://github.com/oxpeter/dbug/blob/cytoscape_102/Cytoscape/exerciseH2.png)
  
 ## (I) Export images
 
