@@ -1,3 +1,6 @@
+![Weill Cornell Medicine Samuel J. Wood Library](https://github.com/oxpeter/dbug/blob/cytoscape_102/Cytoscape/WCM_SamWoodLib.png)
+
+
 # Biological Networking 102 workshop
 ## Using CytoScape for bioinformatics
 
@@ -15,17 +18,19 @@ New York, NY 10065-4896
 (F) 212-746-8364
  
 pro2004@med.cornell.edu
-
-LIBRARY BIOINFORMATICS SERVICE
 ```
 
+![Library Bioinformatic Service](https://github.com/oxpeter/dbug/blob/cytoscape_102/Cytoscape/LBS.png)
+
+
 ## (A) Download MAPK pathway from KEGG
+_if you want to be lazy, you can skip this exercise by just clicking [here](http://www.kegg.jp/kegg-bin/download?entry=hsa04010&format=kgml)_
 
 1) go to KEGG.jp
 2) search for MAPK in top searchbar
-3) select the MAPK pathway (not the specific pathways for yeast, plants et al.)
-4) click on the image to go to the pathway page
-5) select the "organisms" option in the header
+3) select the MAPK signaling pathway (map04010 - not the  pathways for yeast, plants and flies)
+4) click on the pathway map 
+5) select the "organism menu" option in the header
 6) select "Homo sapiens"
 7) select "download KGML" option in the header
 
