@@ -45,6 +45,9 @@ LIBRARY BIOINFORMATICS SERVICE
 16) select File > New > Network > From selected nodes, all edges
 17) right click / control click on the new network in the control panel on the left, and rename it to something informative
 
+![hopefully, this is what you now see](https://github.com/oxpeter/dbug/blob/cytoscape_102/Cytoscape/exercise_C.png)
+
+
 ## (D) Prepare Expression Data
 _NB: This section can be skipped if you wish, and just use the GSE19143.txt file provided.
 This section simply details how this file and its values were obtained._
