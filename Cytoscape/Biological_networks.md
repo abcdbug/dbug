@@ -108,10 +108,26 @@ key column for network: Ensemble
 67) remove the style mapping for box fill in the style tab of the control panel
 68) highlight the network/subnetwork you wish to analyze
 69) select GOlorize from the app menu
+70) select "Start BiNGO"
+71) choose GO enrichment parameters. Ensure for this exercise that you select "get cluster from network", which will use the gene IDs from the "name" column, for all currently selected genes. Because you cannot select which column BiNGO will use for name mapping, you have to alter the content of the name column, as we did at step 66.
 
+BiNGO accesses annotation and ontology databases, that are not necessarily representative of the current release. However, if you download the appropriate files (see geneontology.org > Download > Annotations    and > Download > Ontologies), you can then point BiNGO to these files.
 
-
-answer to 66: =$first_gene
-
-## (I) Export images
+72) click on "Start BiNGO" in the BiNGO dialog window. This should populate the GOlorize window
+73) in the GOlorize options, choose the GO tab (labelled according to your entry in the BiNGO analysis: Default is Bingo cluster 1)
+74) select the GO terms you wish to map onto your network
+75) select "validate". If you wish to also select the genes on your network that contain these GO terms, click "Select nodes"
+76) select the "Selected" tab
+77) this window will show you all your selected GO terms. You can also add extra terms, which do not even need to be present in the GO analysis list (ie, perhaps you wish to see which genes are annotated with a particular term, even though it is not significantly enriched). To add GO terms, use the "Add GO category" button.
+78) select "Auto-Colors" to color the nodes
+79) click on any color in the list to bring up a color selector, so you can manually edit the colors.
  
+## (I) Export images
+80) navigate to your desired network
+81) use the style tab in the control panel, and the tool panel (view menu), to fine-tune the appearance of your network
+82) select File > Export as image...
+83) choose format, file path, and image parameters to suit
+84) click "OK"
+ 
+ ## Answers to challenges:
+ answer to 66: =$first_gene
