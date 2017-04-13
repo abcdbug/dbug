@@ -1,5 +1,23 @@
-# Biological Networks 102 workshop
-## Procedures for performing some basic network analysis using Cytoscape
+# Biological Networking 102 workshop
+## Using CytoScape for bioinformatics
+
+
+```
+Peter Oxley, PhD
+Associate Director of Research Services
+
+Weill Cornell Medicine
+Information Technologies and Services
+Samuel J. Wood Library & C.V. Starr Biomedical Information Center
+1300 York Avenue Room D-120
+New York, NY 10065-4896
+(P) 646-962-2576
+(F) 212-746-8364
+ 
+pro2004@med.cornell.edu
+
+LIBRARY BIOINFORMATICS SERVICE
+```
 
 ## (A) Download MAPK pathway from KEGG
 
@@ -31,7 +49,7 @@
 _NB: This section can be skipped if you wish, and just use the GSE19143.txt file provided.
 This section simply details how this file and its values were obtained._
 
-18) go to the NCBI GEO database (ncbi.nlm.nih.gov/gds)
+18) go to the NCBI [GEO database](ncbi.nlm.nih.gov/gds) (ncbi.nlm.nih.gov/gds)
 19) search for GSE19143
 20) in the search results, find GSE19143, and select "Analyze with GEO2R"
 21) select "define groups" near the top of the screen
@@ -67,11 +85,31 @@ _CytoScape v3.5.0 has incorporated a very useful "Map column" function, that all
 44) select "entire column" from the "Apply to" field
 45) click "OK"
 46) right click / control click on the "first_gene" header, and select "Map column..."
-47) select "Homo sapiens"; Map from "HGNC"; To "Ensembl"; select "Force single"; click "OK"
+47) select the following parameters:
+
+```
+Species:  "Homo sapiens"
+Map from: "HGNC"
+To:       "Ensembl"
+select "Force single" (on)
+
+click "OK"
+```
+
 48) a pop-up window should appear, displaying how many genes were successfully converted. Click "OK"
 49) select the "NodeTable" tab at the bottom of the Table Panel
 50) right click / control click on the "Label" header and select "Map column"
-51) select "Homo sapiens"; Map from "HGNC"; To "Ensemble"; select "Force single"; click "OK"
+51) select the following parameters:
+
+```
+Species:  "Homo sapiens"
+Map from: "HGNC"
+To:       "Ensembl"
+select    "Force single" (on)
+
+click "OK"
+```
+
 52) dismiss the results pop-up window
 53) select Tools > merge > Tables...
 54) select the following options:
@@ -102,7 +140,9 @@ key column for network: Ensemble
 63) select the downwards-pointing arrows above the color gradient; select "Node fill color"; choose your favorite colors
 64) bonus task: change the border color to indicate the adjusted P value
 
-## (H) GO analysis
+## (H) GO analysis with BiNGO and GOlorize
+_A very helpful tutorial for GOlorize can be found [here](https://github.com/schwikowskilab/GOlorize/wiki). The BiNGO user guide can be found [here](https://www.psb.ugent.be/cbd/papers/BiNGO/User_Guide.html)._
+
 65) create a new copy of the MAPK classic network (steps 15 to 17)
 66) go to App Manager and install "BiNGO" and "GOlorize"
 67) using cell formulae, re-assign the values of column "name" to equal that of "first-gene"
@@ -123,7 +163,8 @@ _BiNGO accesses annotation and ontology databases, that are not necessarily repr
 79) select "Auto-Colors" to color the nodes
 80) click on any color in the list to bring up a color selector, so you can manually edit the colors.
 
-__view and modify the enriched GO hierarchy__
+__View and modify the enriched GO hierarchy__
+
 81) select the GO term network ("Bingo Cluster 1", unless you renamed it at step 71)
 
 _All GO terms that were significanly enriched (after any multiple testing correction) are shown in yellow. The lower the P value, the more orange the node. Uncolored nodes are parent nodes needed to connect their enriched daughter nodes to the network. Node size is relative to the number of genes that are annotated with that GO term._
@@ -132,6 +173,7 @@ _All GO terms that were significanly enriched (after any multiple testing correc
 83) select Layout > yFiles Layouts > Hierarchic
  
 ## (I) Export images
+
 84) navigate to your desired network
 85) use the style tab in the control panel, and the tool panel (view menu), to fine-tune the appearance of your network
 86) select File > Export as image...
