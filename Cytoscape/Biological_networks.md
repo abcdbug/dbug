@@ -23,7 +23,7 @@ pro2004@med.cornell.edu
 ![Library Bioinformatic Service](https://github.com/oxpeter/dbug/blob/cytoscape_102/Cytoscape/LBS.png)
 
 
-## (A) Download MAPK pathway from KEGG
+## Exercise A) Download MAPK pathway from KEGG
 _if you want to be lazy, you can skip this exercise by just clicking [here](http://www.kegg.jp/kegg-bin/download?entry=hsa04010&format=kgml)_
 
 1) go to KEGG.jp
@@ -34,7 +34,7 @@ _if you want to be lazy, you can skip this exercise by just clicking [here](http
 6) select "Homo sapiens"
 7) select "download KGML" option in the header
 
-## (B) Install cyKEGGParser
+## Exercise B) Install cyKEGGParser
 
 8) open CytoScape
 9) go to Apps > App manager 
@@ -42,7 +42,7 @@ _if you want to be lazy, you can skip this exercise by just clicking [here](http
 11) select app, then click install
 12) click "close"
 
-## (C) Create classic MAPK pathway network
+## Exercise C) Create classic MAPK pathway network
 
 13) go to Apps > KEGGParser > Load KGML > Load local KGML
 14) navigate to the saved MAPK KGML file from (B)
@@ -53,7 +53,7 @@ _if you want to be lazy, you can skip this exercise by just clicking [here](http
 ![hopefully, this is what you now see](https://github.com/oxpeter/dbug/blob/cytoscape_102/Cytoscape/exercise_C.png)
 
 
-## (D) Prepare Expression Data
+## Exercise D) Prepare Expression Data
 _NB: This section can be skipped if you wish, and just use the GSE19143.txt file provided.
 This section simply details how this file and its values were obtained._
 
@@ -68,7 +68,7 @@ This section simply details how this file and its values were obtained._
 26) find and replace all quotation marks
 27) save file as GSE19143.txt
 
-## (E) Upload expression data to CytoScape
+## Exercise E) Upload expression data to CytoScape
 
 28) select Import > Table > File...
 29) navigate to saved expression file GSE19143.txt
@@ -80,7 +80,7 @@ This section simply details how this file and its values were obtained._
 35) click outside the options box to close it
 36) click "OK"
 
-## (F) Add expression data to pathway
+## Exercise F) Add expression data to pathway
 _CytoScape v3.5.0 has incorporated a very useful "Map column" function, that allows conversion from one gene identifier to another. If you require more options/species/identifiers, install the BridgeDB app._
 
 37) in the table panel, select "unassigned tables" on the the bottom tabs
@@ -138,7 +138,7 @@ key column for network: Ensemble
 55) select "OK"
 56) confirm that the node table for the MAPK classical network now includes all the columns from the GSE experiment.
 
-## (G) Color genes according to expression
+## Exercise G) Color genes according to expression
 
 57) select the style tab in the control panel (left window)
 58) select fill color
@@ -151,7 +151,7 @@ key column for network: Ensemble
 
 ![hopefully, this is what you now see](https://github.com/oxpeter/dbug/blob/cytoscape_102/Cytoscape/exercise_G.png)
 
-## (H) GO analysis with BiNGO and GOlorize
+## Exercise H) GO analysis with BiNGO and GOlorize
 _A very helpful tutorial for GOlorize can be found [here](https://github.com/schwikowskilab/GOlorize/wiki). The BiNGO user guide can be found [here](https://www.psb.ugent.be/cbd/papers/BiNGO/User_Guide.html)._
 
 65) create a new copy of the MAPK classic network (steps 15 to 17)
@@ -188,7 +188,7 @@ _All GO terms that were significanly enriched (after any multiple testing correc
  
 ![hopefully, this is what you now see](https://github.com/oxpeter/dbug/blob/cytoscape_102/Cytoscape/exerciseH2.png)
  
-## (I) Export images
+## Exercise I) Export images
 
 84) navigate to your desired network
 85) use the style tab in the control panel, and the tool panel (view menu), to fine-tune the appearance of your network
@@ -196,5 +196,9 @@ _All GO terms that were significanly enriched (after any multiple testing correc
 87) choose format, file path, and image parameters to suit
 88) click "OK"
  
+## Bonus exercise:
+_Using BiNGO, can you input the genes with significant differential expression, identify potential candidate pathways containing these genes (you can also use [KEGG mapper](http://www.kegg.jp/kegg/tool/map_pathway1.html) for this), then repeat the above exercise to color and sort the significant genes within the identified pathway?_ 
+ 
+
  ## Answers/Hints to challenges:
  hint for 67: "=$first_gene"
