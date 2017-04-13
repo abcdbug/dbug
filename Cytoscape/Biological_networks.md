@@ -28,8 +28,8 @@
 17) right click / control click on the new network in the control panel on the left, and rename it to something informative
 
 ## (D) Prepare Expression Data
-NB: This section can be skipped if you wish, and just use the GSE19143.txt file provided.
-This section simply details how this file and its values were obtained.
+_NB: This section can be skipped if you wish, and just use the GSE19143.txt file provided.
+This section simply details how this file and its values were obtained._
 
 18) go to the NCBI GEO database (ncbi.nlm.nih.gov/gds)
 19) search for GSE19143
@@ -55,7 +55,7 @@ This section simply details how this file and its values were obtained.
 36) click "OK"
 
 ## (F) Add expression data to pathway
-CytoScape v3.5.0 has incorporated a very useful "Map column" function, that allows conversion from one gene identifier to another. If you require more options/species/identifiers, install the BridgeDB app.
+_CytoScape v3.5.0 has incorporated a very useful "Map column" function, that allows conversion from one gene identifier to another. If you require more options/species/identifiers, install the BridgeDB app._
 
 37) in the table panel, select "unassigned tables" on the the bottom tabs
 38) select "+" (create new column) > New Single Column > String
@@ -103,31 +103,40 @@ key column for network: Ensemble
 64) bonus task: change the border color to indicate the adjusted P value
 
 ## (H) GO analysis
-65) go to App Manager and install "BiNGO" and "GOlorize"
-66) using cell formulae, re-assign the values of column "name" to equal that of "first-gene"
-67) remove the style mapping for box fill in the style tab of the control panel
-68) highlight the network/subnetwork you wish to analyze
-69) select GOlorize from the app menu
-70) select "Start BiNGO"
-71) choose GO enrichment parameters. Ensure for this exercise that you select "get cluster from network", which will use the gene IDs from the "name" column, for all currently selected genes. Because you cannot select which column BiNGO will use for name mapping, you have to alter the content of the name column, as we did at step 66.
+65) create a new copy of the MAPK classic network (steps 15 to 17)
+66) go to App Manager and install "BiNGO" and "GOlorize"
+67) using cell formulae, re-assign the values of column "name" to equal that of "first-gene"
+68) remove the style mapping for box fill in the style tab of the control panel
+69) highlight the network/subnetwork you wish to analyze
+70) select GOlorize from the app menu
+71) select "Start BiNGO"
+72) choose GO enrichment parameters. Ensure for this exercise that you select "get cluster from network", which will use the gene IDs from the "name" column, for all currently selected genes. Because you cannot select which column BiNGO will use for name mapping, you have to alter the content of the name column, as we did at step 66.
 
-BiNGO accesses annotation and ontology databases, that are not necessarily representative of the current release. However, if you download the appropriate files (see geneontology.org > Download > Annotations    and > Download > Ontologies), you can then point BiNGO to these files.
+_BiNGO accesses annotation and ontology databases, that are not necessarily representative of the current release. However, if you download the appropriate files (see geneontology.org > Download > Annotations    and > Download > Ontologies), you can then point BiNGO to these files._
 
-72) click on "Start BiNGO" in the BiNGO dialog window. This should populate the GOlorize window
-73) in the GOlorize options, choose the GO tab (labelled according to your entry in the BiNGO analysis: Default is Bingo cluster 1)
-74) select the GO terms you wish to map onto your network
-75) select "validate". If you wish to also select the genes on your network that contain these GO terms, click "Select nodes"
-76) select the "Selected" tab
-77) this window will show you all your selected GO terms. You can also add extra terms, which do not even need to be present in the GO analysis list (ie, perhaps you wish to see which genes are annotated with a particular term, even though it is not significantly enriched). To add GO terms, use the "Add GO category" button.
-78) select "Auto-Colors" to color the nodes
-79) click on any color in the list to bring up a color selector, so you can manually edit the colors.
+73) click on "Start BiNGO" in the BiNGO dialog window. This will create a new network, containing the GO hierarchy of all enriched terms. It should also populate the GOlorize window
+74) in the GOlorize options, choose the GO tab (labelled according to your entry in the BiNGO analysis: Default is Bingo cluster 1)
+75) select the GO terms you wish to map onto your network
+76) select "validate". If you wish to also select the genes on your network that contain these GO terms, click "Select nodes"
+77) select the "Selected" tab
+78) this window will show you all your selected GO terms. You can also add extra terms, which do not even need to be present in the GO analysis list (ie, perhaps you wish to see which genes are annotated with a particular term, even though it is not significantly enriched). To add GO terms, use the "Add GO category" button.
+79) select "Auto-Colors" to color the nodes
+80) click on any color in the list to bring up a color selector, so you can manually edit the colors.
+
+__view and modify the enriched GO hierarchy__
+81) select the GO term network ("Bingo Cluster 1", unless you renamed it at step 71)
+
+_All GO terms that were significanly enriched (after any multiple testing correction) are shown in yellow. The lower the P value, the more orange the node. Uncolored nodes are parent nodes needed to connect their enriched daughter nodes to the network. Node size is relative to the number of genes that are annotated with that GO term._
+
+82) select all nodes 
+83) select Layout > yFiles Layouts > Hierarchic
  
 ## (I) Export images
-80) navigate to your desired network
-81) use the style tab in the control panel, and the tool panel (view menu), to fine-tune the appearance of your network
-82) select File > Export as image...
-83) choose format, file path, and image parameters to suit
-84) click "OK"
+84) navigate to your desired network
+85) use the style tab in the control panel, and the tool panel (view menu), to fine-tune the appearance of your network
+86) select File > Export as image...
+87) choose format, file path, and image parameters to suit
+88) click "OK"
  
- ## Answers to challenges:
- answer to 66: =$first_gene
+ ## Answers/Hints to challenges:
+ hint for 67: "=$first_gene"
