@@ -1,0 +1,161 @@
+---
+title: "Unit testing in R"
+author: "Davide Risso"
+date: "5/11/2017"
+output: 
+  ioslides_presentation:
+    widescreen: true
+    smaller: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warnings = FALSE, message = FALSE)
+```
+
+## Outline
+
+- What is unit testing?
+- Why is unit testing important?
+- The `testthat` package
+- Test coverage and the `covr` package
+- Unit tests and Continuous Integration
+- Travis CI and R Travis
+
+## Useful resources
+
+- Hadley Wickham's [R packages book](http://r-pkgs.had.co.nz)
+       - In particular the "Testing" chapter
+- ["Writing R extensions" manual](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)
+- [R Travis](https://docs.travis-ci.com/user/languages/r/)
+- [The `covr` vignette](https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html)
+
+## What is unit testing?
+
+From wikipedia...
+
+In computer programming, unit testing is a software testing method by which __individual units of source code__ [...] are tested to determine whether they are fit for use.
+
+In R packages 
+
+`units of codes == functions`
+
+## Why is unit testing important {.build}
+
+- __When creating a package__, to make sure that the implementation of the method is correct.
+
+Hence, test the code on some cases for which the answer is known and make sure that it can be retrieved.
+
+- __When modifying the code__ to introduce new features or to fix a bug, to make sure that the fix doesn't break the implementation.
+
+Hence, running the tests every time we release the code.
+
+__Ideally, at every commit!__
+
+## Why should I bother?
+
+The reality is that you already test the code, just not in a __formal__, __systematic__ way.
+
+The problem with informal testing is that you have to do it from scratch every time. It's very easy to forget some tests and break existing code.
+
+## Advantages of formal testing
+
+(According to Hadley Wickham)
+
+> 1. Fewer bugs. If you write a test for every bug that you fix, old bugs will not come back in the future.
+> 2. Better code structure. Writing tests forces you to break up complicated code into separate functions.
+> 3. Easier restarts. Create a failing test at the end of the session and running the test will tell you what to do next.
+> 4. Robust code. If all the major part of the package are tested, you can confidently change many functionality without the fear of breaking the package.
+
+## Unit testing in R
+
+Testing is really just writing some code in a script and running it every time you make a major change to the package.
+
+One of the best features of R is `R CMD check` and luckily there is a way to add your tests to your `R CMD check` routine.
+
+All it takes is to add your script(s) to the `tests/` directory.
+
+[Example from my RUVSeq package](https://github.com/drisso/RUVSeq/tree/master/tests).
+
+## The `testthat` package
+
+As with most of the things you want to do in R, Hadley Wickham has a package for that...
+
+It provides a set of utility functions such as `expect_equal()`, `expect_error()`, etc. that make testing easier.
+
+## The `testthat` package
+
+To set up your package to use testthat, run:
+
+```{r eval=FALSE}
+devtools::use_testthat()
+```
+
+This will:
+
+1. Create a tests/testthat directory.
+2. Add testthat to the Suggests field in the DESCRIPTION.
+3. Create a file tests/testthat.R that runs all your tests when `R CMD check` runs.
+
+You can then add all your tests as scripts in the `tests/testthat/` folder.
+
+[Example from my zinbwave package](https://github.com/drisso/zinbwave/tree/master/tests).
+
+## Live demo
+
+1. Create a simple R package.
+2. Add some tests.
+3. Run `R CMD check`.
+
+## Test coverage and the `covr` package
+
+I find it extremely useful to know how much of my code is covered by at least one unit test.
+
+The `covr` package by Jim Hester does just that: it runs through the functions in a package and checks whether they are covered by your tests.
+
+This is as simple as
+
+```{r eval=FALSE}
+covr::package_coverage()
+```
+
+Websites like `codecov.io` and `coveralls.io` provide a nice graphical interface.
+
+[Example](https://codecov.io/gh/drisso/zinbwave).
+
+## Unit testing and Continuous Integration
+
+`R CMD check` automatically checks your code for common problems.
+
+It is mandatory to pass `R CMD check` without warnings before submitting to CRAN or Bioconductor.
+
+Even for your personal package, it is good practice to check your package often.
+
+How often? As often as you can... i.e., after every commit!
+
+## Travis C.I.
+
+All it takes to use Travis C.I. (after setting up an account) is to write a few instructions in a yaml file named `.travis.yml` to be added to your GitHub repository.
+
+[Example](https://github.com/drisso/zinbwave/blob/master/.travis.yml).
+
+Travis is free for open source projects (up to 50 minutes for every push).
+
+## Linking test coverage to your Travis C.I. build
+
+The `covr` package has a `codecov()` and a `coveralls()` function that can be run on Travis to generate a report to be uploaded to `codecov.io` or `coveralls.io` respectively.
+
+All it takes is to add the following lines to the Travis yaml file.
+
+```{r eval=FALSE}
+after_success:
+  - Rscript -e 'library(covr); codecov()'
+```
+
+## Live demo
+
+1. Create a GitHub repository for the R package.
+2. Add a .travis.yml file to the repositort.
+3. Push changes to trigger Travis build.
+4. Add repo to codecov.io to explore test coverage.
+5. Badges! :)
+
