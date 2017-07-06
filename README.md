@@ -12,6 +12,7 @@ For the collection of future topics, see this [issue here](https://github.com/ab
 
 | Date | Topic | Presenter |
 |------|-------|-----------|
+| 2017-08-03 | Docker for HPC environments: Singularity | Vanessa Borcherding |
 | 2017-05-11 | [Robustify your R code using the testthat package](https://github.com/abcdbug/dbug/tree/master/R_testthat) | [Davide Risso](https://drisso.github.io/) |
 | 2017-04-13 | [Bioinformatic Applications of Cytoscape](https://github.com/abcdbug/dbug/tree/master/Cytoscape) | [Peter Oxley](mailto:pro2004@med.cornell.edu) |
 | 2017-03-23 | [Building networks using Cytoscape](https://github.com/abcdbug/dbug/tree/master/Cytoscape) | Michael Bales |
