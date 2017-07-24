@@ -3,11 +3,11 @@
 We meet on __select Thursdays, 1:30 pm__ in the seminar room of the Department for Physiology & Biophysics on the 5th floor in the main WCM building. 
 This is a place for informal exchange of coding tips and tricks with a focus on _how_ stuff is actually done. Think interactive version of stackoverflow.
 
-If you would like to receive more information and make sure you get the announcements of the next meeting straight into your inbox, send an email to the [Applied Bioinformatics Core](https://abc.med.cornell.edu) of Weill Cornell Medicine.
+If you would like to receive more information and make sure you get the announcements of the next meeting straight into your inbox (including an occasional mail with related announcements), send an email to the [Applied Bioinformatics Core](https://abc.med.cornell.edu) of Weill Cornell Medicine.
 
 Each meeting will get its folder where the material that was discussed will be available.
 
-Feel free to post issues/comments etc. And if you have a tool or topic that's near and dear to your coder's heart, _please share_! :)
+Feel free to post issues/comments etc. And if you have a tool or topic that's near and dear to your coder's heart, _please share_, preferably during one of our meetings! :)
 
 For the collection of future topics, see this [issue here](https://github.com/abcdbug/dbug/issues/1).
 
