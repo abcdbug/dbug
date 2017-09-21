@@ -15,7 +15,7 @@ For the collection of future topics, see this [issue here](https://github.com/ab
 
 | Date | Topic | Presenter |
 |------|-------|-----------|
-| 2017-09-21 | Hot off the press: JyputerCon & latest Jupyter Notebook developments | [Peter Oxley](mailto:pro2004@med.cornell.edu) |
+| 2017-09-21 | [Hot off the press: JupyterCon & latest Jupyter Notebook developments](https://github.com/abcdbug/dbug/tree/master/JupyterNotebooks_Update) | [Peter Oxley](mailto:pro2004@med.cornell.edu) |
 | 2017-08-03 | Docker for HPC environments: Singularity | Vanessa Borcherding |
 | 2017-07-27 | Special BarCode event (minus code) | [Jaffrey's](https://www.yelp.com/biz/the-jeffrey-craft-beer-and-bites-new-york) |
 | 2017-05-11 | [Robustify your R code using the testthat package](https://github.com/abcdbug/dbug/tree/master/R_testthat) | [Davide Risso](https://drisso.github.io/) |
