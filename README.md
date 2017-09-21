@@ -22,7 +22,7 @@ For the collection of future topics, see this [issue here](https://github.com/ab
 | 2017-04-13 | [Bioinformatic Applications of Cytoscape](https://github.com/abcdbug/dbug/tree/master/Cytoscape) | [Peter Oxley](mailto:pro2004@med.cornell.edu) |
 | 2017-03-23 | [Building networks using Cytoscape](https://github.com/abcdbug/dbug/tree/master/Cytoscape) | Michael Bales |
 |2016-12-07 | [How to create R packages](https://github.com/abcdbug/dbug/tree/master/R_Packages)    | [Khagay Nagdimov](mailto:khagay@nyu.edu) |
-|2016-11-17 | Using Docker | [Evan Biederstedt](mailto:ebiederstedt@nygenome.org) |
+|2016-11-17 | [Using Docker](https://github.com/abcdbug/dbug/tree/master/Docker) | [Evan Biederstedt](mailto:ebiederstedt@nygenome.org) |
 |2016-09-22 | [Mastering `git`](https://github.com/abcdbug/team-up-with-git) | [John Richardson](mailto:john@physbio-tech.net) |
 |2016-08-18 | [R's `data.table` package: Slicing large tables the Ninja way!](https://github.com/alexpenson/data.table.examples) | [Alex Penson](https://www.mskcc.org/research-areas/labs/members/alexander-penson) |
 |2016-07-07 | [Jupyter Notebooks: Seamlessly combining research and documentation](https://github.com/abcdbug/dbug/tree/master/JupyterNotebooks) | [Greg Putzel](mailto://grp2009@med.cornell.edu)  |
