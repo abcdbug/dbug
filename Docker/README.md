@@ -14,7 +14,7 @@ A briefer, but still somewhat granular overview may be found at our [Hackathon's
 
 1. develop your code; make sure to keep track of all dependencies, ideally, you keep copious notes of how you installed every single dependency
 2. install docker
-3. write a docker file turning your notes of step 1 into a file that conforms with docker format (most of it is copy & paste of command line code!)
+3. write a docker file (e.g., one like [this](https://github.com/NCBI-Hackathons/Cancer_Epitopes_CSHL/blob/master/Dockerfile)) turning your notes of step 1 into a file that conforms with docker format (most of it is copy & paste of command line code!)
 4. share your docker file with whoever you want to be able to run your code
 
 ## Why is docker not allowed in our cluster?
