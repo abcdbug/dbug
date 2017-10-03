@@ -8,7 +8,7 @@ The three main new developments that we discussed were:
 
 * [JupyterLab](https://github.com/jupyterlab/jupyterlab), a really cool environment that does not only include the well-known Jupyter notebook, but will also offer terminal, text editor, file browser and other capabilities - including a chat function so you can **work together on the same notebook** with multiple people! Think google docs for Jupyter! It's still in a fairly early development stage, but you can find Peter's very detailed instructions on how to install it and get started [here](https://github.com/oxpeter/library_bioinformatics_service/blob/master/Jupyter/Jupyterlab_install.md)
 * [JupyterHub](https://github.com/jupyterhub/jupyterhub), which you can use to create a **multi-user hub** using a single-user Jupyter Notebook server
-* [binder](https://beta.mybinder.org/) -- turning your repo full of Jupyter Notebooks into a **collection of interactive notebooks**
+* [binder](https://beta.mybinder.org/) -- turning your repo full of Jupyter Notebooks into a **collection of interactive notebooks**. Keep an eye on the WCM mailing list as Peter is probably going to demo this some time soon in the WCM Library!
 * [ipywidgets](https://github.com/jupyter-widgets/ipywidgets) -- not necessarily the latest news out of JupyterCon, but a cool tool nevertheless
 
-Btw, O'Reilly is now embracing Jupyter Notebooks for actual publishing content! Check it out [here](https://www.oreilly.com/ideas/jupyter-at-oreilly).
+Btw, O'Reilly is now embracing Jupyter Notebooks for real-life, commercial publishing! Check it out [here](https://www.oreilly.com/ideas/jupyter-at-oreilly).
