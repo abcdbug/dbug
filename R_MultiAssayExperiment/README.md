@@ -35,7 +35,7 @@ Every `MultiAssayExperiment` object consists of 3 types of data:
 
 Here's my uglified version of [Marcel's elegant figure](http://cancerres.aacrjournals.org/content/canres/77/21/e39/F1.large.jpg) that tries to explains the relationships between the different data sets.
 
-![](https://github.com/abcdbug/dbug/blob/master/R_MultiAssayExperiment/mae_input.pdf)
+![](https://raw.githubusercontent.com/abcdbug/dbug/master/R_MultiAssayExperiment/mae_input.png)
 
 The actual data that I used for the snapshots above can be found in the [xls sheet here](https://github.com/abcdbug/dbug/blob/master/R_MultiAssayExperiment/mae_example_data.xlsx).
 
@@ -157,4 +157,4 @@ map <- sampleMap(miniACC)
 unique(map$assay)
 ```
 
-![Cheatsheet](https://github.com/waldronlab/MultiAssayExperimentWorkshop/blob/master/vignettes/MultiAssayExperiment_cheatsheet.pdf)
+![Cheatsheet](https://raw.githubusercontent.com/waldronlab/MultiAssayExperimentWorkshop/master/vignettes/MultiAssayExperiment_cheatsheet.pdf)
