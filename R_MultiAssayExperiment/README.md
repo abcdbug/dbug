@@ -1,5 +1,9 @@
 # MultiAssayExperiment
 
+The `MultiAssayExperiment` class has been developed by the [Waldron Lab at CUNY](http://waldronlab.org/).
+
+## Slides & more background info
+
 The package, introduction and **slides** related to the tutorial on Nov 16, 2017 can all be found in the [Waldron Lab repo](https://github.com/waldronlab/MultiAssayExperimentWorkshop).
 
 Here's the link to the [Bioconductor page](https://bioconductor.org/packages/release/bioc/html/MultiAssayExperiment.html) of the package.
@@ -8,27 +12,27 @@ And here is the [publication](http://cancerres.aacrjournals.org/content/77/21/e3
 
 ----------------------------------------
 
+## Here's the gist of the `d:bug` session:
+
 In short, the `MultiAssayExperiment` class allows you to store different _types_ of data (e.g., RNA-seq, exome-seq, proteomics) for a set of speciments (e.g., a certain group of patients).
 
-Every `MultiAssayExperiment` object can be subsetted for 3 subtypes:
+Every `MultiAssayExperiment` object consists of 3 types of data:
 
 1. *experiments* (--> will be subsettable as the "rows" of the final `MultiAssayExperiment` object)
 	- used for storing the actual values/observations
-	- can be simple matrix or SummarizedExperiment or any kind of data set that meet some basic requirements
+	- think of it as a list of tables, one for every assay/type of experiment
+	- can be accessed in numerous ways (see below), e.g. via `assays(mae)`, which will return a list of value matrices for every single experiment
+	- the values for every type of assay can be supplied as simple matrices or `SummarizedExperiment` or any kind of data set that meets some basic requirements (see the slides for more info)
 2. *colData* (--> will define what will be subsettable as the "columns" of the final `MultiAssayExperiment` object)
-  - data.frame
-  - information about the samples, e.g., patients, different mice, different time points - whatever you choose to be your smallest unit of interest
-	- similar to SummarizedExperiment syntax
+  - `DataFrame` (bioconductor's improved `data.frame`) with __information about the samples__, e.g., details about the patients, different mice, different time points - whatever you choose to be your smallest unit of interest
 3. *sampleMap* 
-  * this is what binds everything (i.e., the assay data and the sample information) together
-  * for every single column of _every_ type of experiment, this contains the information about which patient it belongs to
+  * this is what binds everything (i.e., the values from the assays and the sample information) together
+  * for every single column of _every_ type of experiment, you this contains the information about which patient it belongs to, i.e., it provides the mapping between the row.names of `colData` (e.g. patient IDs) and the col.names of all the assays stored in `experiments`
   * needs three columns:
-    * assay name (e.g., "RNAseq", "proteomics")
-	  * primary identifier (e.g. identifier of the patient or the mouse or the time point or whatever you choose as the content of the rows for `colData`)
-	  * colname (the actual column names of every single part of `experiments`
+    * "assay": e.g., "RNAseq", "proteomics"
+    * "primary": e.g. identifier of the patient or the mouse or the time point or whatever you choose as the content of the rows for `colData`)
+    * "colname": the actual column names of every single assay of `experiments`
 
-
-Here's the gist of the `d:bug` session:
 
 ### Installation and loading of the library and sample data
 
