@@ -33,6 +33,11 @@ Every `MultiAssayExperiment` object consists of 3 types of data:
     * "primary": e.g. identifier of the patient or the mouse or the time point or whatever you choose as the content of the rows for `colData`)
     * "colname": the actual column names of every single assay of `experiments`
 
+Here's my uglified version of [Marcel's elegant figure](http://cancerres.aacrjournals.org/content/canres/77/21/e39/F1.large.jpg) that tries to explains the relationships between the different data sets.
+
+![](https://github.com/abcdbug/dbug/blob/master/R_MultiAssayExperiment/mae_input.pdf)
+
+The actual data that I used for the snapshots above can be found in the [xls sheet here](https://github.com/abcdbug/dbug/blob/master/R_MultiAssayExperiment/mae_example_data.xlsx).
 
 ### Installation and loading of the library and sample data
 
