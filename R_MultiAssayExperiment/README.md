@@ -16,7 +16,7 @@ And here is the [publication](http://cancerres.aacrjournals.org/content/77/21/e3
 
 ## Here's the gist of the `d:bug` session:
 
-In short, the `MultiAssayExperiment` class allows you to store different _types_ of data (e.g., RNA-seq, exome-seq, proteomics) for a set of speciments (e.g., a certain group of patients).
+In short, the `MultiAssayExperiment` class allows you to store different _types_ of data (e.g., RNA-seq, exome-seq, proteomics) for a set of specimens (e.g., a certain group of patients).
 
 Every `MultiAssayExperiment` object consists of 3 types of data:
 
