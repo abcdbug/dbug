@@ -15,7 +15,7 @@ For the collection of future topics, see this [issue here](https://github.com/ab
 
 | Date | Topic | Presenter |
 |------|-------|-----------|
-| 2017-11-16 | One class to bind them all: the MultiAssayExperiment R class | [Levi Waldon & Marcel Ramos](http://waldronlab.org/)|
+| 2017-11-16 | [One class to bind them all: the MultiAssayExperiment R class](https://github.com/abcdbug/dbug/tree/master/R_MultiAssayExperiment) | [Levi Waldon & Marcel Ramos](http://waldronlab.org/)|
 | 2017-09-21 | [Hot off the press: JupyterCon & latest Jupyter Notebook developments](https://github.com/abcdbug/dbug/tree/master/JupyterNotebooks_Update) | [Peter Oxley](mailto:pro2004@med.cornell.edu) |
 | 2017-08-03 | Docker for HPC environments: Singularity | Vanessa Borcherding |
 | 2017-07-27 | Special BarCode event (minus code) | [Jaffrey's](https://www.yelp.com/biz/the-jeffrey-craft-beer-and-bites-new-york) |
