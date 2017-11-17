@@ -16,7 +16,7 @@ And here is the [publication](http://cancerres.aacrjournals.org/content/77/21/e3
 
 ## Here's the gist of the `d:bug` session
 
-* [Installation[(#install)
+* [Installation](#install)
 * [Understanding the parts of the MAE](#MAE_subsets)
     - [`colData`](#clindat)
     - [observations/experiments](#assay)
