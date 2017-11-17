@@ -45,11 +45,12 @@ The beauty of storing all of these data in one object is that you can use many f
 The general strategy is:
 
 ```
-mae[ rows_of_experiments (== e.g. genes), columns_of_experiments(== e.g. patients), type_of_experiment ]
+mae[ rows_of_experiments (e.g. genes), columns_of_experiments(e.g. patients), type_of_experiment ]
 ```
 
 See below for more details.
 
+<a id="install"></a>
 ### Installation and loading of the library and sample data
 
 ```
@@ -86,11 +87,13 @@ There is data from 5 types of assay:
   - Mutations: non-silent somatic mutations by gene
   - miRNASeqGene: microRNA abundance by microRNA-seq.
 
+<a id="MAE_subsets"></a>
 ### The individual parts of the `MultiAssayExperiment` class
 
 To get a feeling for what the different aspects look like, we took the object apart.
 
-#### get the patient info
+<a id="clindat"></a>
+#### Get the patient info
 
 ```
 clindat <- colData(miniACC)
@@ -98,7 +101,8 @@ clindat <- colData(miniACC)
 
 Check the [clindat_colData.txt file](https://raw.githubusercontent.com/abcdbug/dbug/master/R_MultiAssayExperiment/clindat_colData.txt) above to see what that actually looks like.
 
-#### extract the actual values (observations) from the different assay types
+<a id="assay"></a>
+#### Extract the actual values (observations) from the different assay types 
 
 Note the different ways to extract the actual data!
 
@@ -112,7 +116,8 @@ miRNAseq <- assays(miniACC)[["miRNASeqGene"]]
 
 You can see some of the resulting files in this repo: [miRNAseq.txt](https://raw.githubusercontent.com/abcdbug/dbug/master/R_MultiAssayExperiment/miRnaseq.txt), [mutations.txt](https://raw.githubusercontent.com/abcdbug/dbug/master/R_MultiAssayExperiment/mutations.txt), [rnaseq.txt](https://raw.githubusercontent.com/abcdbug/dbug/master/R_MultiAssayExperiment/rnaseq.txt)
 
-#### Extract the `sampleMap`
+<a id="sampleMap"></a>
+#### Extract the `sampleMap` 
 
 ```
 map <- sampleMap(miniACC)
@@ -120,7 +125,8 @@ map <- sampleMap(miniACC)
 
 [sampleMap](https://raw.githubusercontent.com/abcdbug/dbug/master/R_MultiAssayExperiment/sampleMap.txt)
 
-#### generate a `MultiAssayExperiment` object
+<a id="MAE"></a>
+### Generate a `MultiAssayExperiment` object 
 
 Now, let's assume you actually started the normal way, i.e., you have a bunch of text files and possibly spread sheets and you want to use those to generate a `MultiAssayExperiment`. You could easily re-create that using the files in this repo.
 
@@ -156,7 +162,7 @@ harmonizing input:
 > which(!my_map_reduced$colname %in% c(colnames(my_experiments$RNASeq2GeneNorm), colnames(my_experiments$Mutations)))
 [1] 80
 ```
-#### Subsetting fun
+#### Subsetting fun <a id="subsetting"></a>
 
 ```
 # let's retrieve the values from the RNAseq for the DIABLO gene for the first two patients
@@ -180,4 +186,34 @@ names(2): RNASeq2GeneNorm gistict
 ```
 
 For more details, see the vignettes at the bioconductor page!
+
+#### Levi's R history from the workshop <a id="LeviHistory"></a>
+
+```
+library(MultiAssayExperiment)
+data(miniACC)
+rnaseq <- assays(miniACC)[[1]]
+gistic <- miniACC[[2]]
+protein <- miniACC[["RPPAArray"]]
+mutations <- assay(miniACC, 4)
+clindat <- colData(miniACC)
+map <- sampleMap(miniACC)
+ 
+mylist <- list(RNASeq2GeneNorm=rnaseq,
+               gistict=gistic,
+               RPPAArray=protein,
+               Mutations=mutations)
+mae <- MultiAssayExperiment(experiments=mylist, colData=clindat, sampleMap=map)
+mae["DIABLO", , ]
+assays(mae["DIABLO",  , ])
+assay(mae["DIABLO",  , ])
+```
+
+When asked about his "favorite function":
+
+```
+wideFormat(mae["DIABLO",  , ])
+wideFormat(mae["DIABLO",  , ], colDataCols = "vital_status")
+longFormat(mae["DIABLO",  , ], colDataCols = "vital_status")
+```
 
