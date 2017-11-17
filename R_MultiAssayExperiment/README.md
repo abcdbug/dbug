@@ -14,7 +14,16 @@ And here is the [publication](http://cancerres.aacrjournals.org/content/77/21/e3
 
 ----------------------------------------
 
-## Here's the gist of the `d:bug` session:
+## Here's the gist of the `d:bug` session
+
+* [Installation[(#install)
+* [Understanding the parts of the MAE](#MAE_subsets)
+    - [`colData`](#clindat)
+    - [observations/experiments](#assay)
+    - [SampleMap](#sampleMap)
+* [Constructing an MAE from scratch](#MAE)
+    - [Subsetting the MAE](#subsetting)
+* [Levi's R history from Nov 16](#LeviHistory)
 
 In short, the `MultiAssayExperiment` class allows you to store different _types_ of data (e.g., RNA-seq, exome-seq, proteomics) for a set of specimens (e.g., a certain group of patients).
 
