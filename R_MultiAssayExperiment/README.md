@@ -4,22 +4,22 @@ The `MultiAssayExperiment` class has been developed by the [Waldron Lab at CUNY]
 
 ## Slides & more background info
 
-The package, introduction and **slides** related to the tutorial on Nov 16, 2017 can all be found in the [Waldron Lab repo](https://github.com/waldronlab/MultiAssayExperimentWorkshop).
+The package, introduction and **slides** related to the tutorial on Nov 16, 2017 can all be found in the [Waldron Lab repo](https://github.com/waldronlab/MultiAssayExperimentWorkshop). For some notes, see below.
 
 Here's the link to the [Bioconductor page](https://bioconductor.org/packages/release/bioc/html/MultiAssayExperiment.html) of the package.
 
 And here is the [publication](http://cancerres.aacrjournals.org/content/77/21/e39) demonstrating the application of the package for data-driven cancer research.
 
-![Cheatsheet](https://raw.githubusercontent.com/waldronlab/MultiAssayExperimentWorkshop/master/vignettes/MultiAssayExperiment_cheatsheet.pdf)
+![MultiAssayExperiment Cheatsheet](https://raw.githubusercontent.com/waldronlab/MultiAssayExperimentWorkshop/master/vignettes/MultiAssayExperiment_cheatsheet.pdf)
 
 ----------------------------------------
 
-## Here's the gist of the `d:bug` session
+## Here's the gist of the `d:bug` session on Nov 16, 2017
 
 * [Installation](#install)
-* [Understanding the parts of the MAE](#MAE_subsets)
-    - [`colData`](#clindat)
+* [Understanding the 3 main parts of the MultiAssayExperiment](#MAE_subsets)
     - [observations/experiments](#assay)
+    - [`colData`](#clindat)
     - [SampleMap](#sampleMap)
 * [Constructing an MAE from scratch](#MAE)
     - [Subsetting the MAE](#subsetting)
@@ -30,15 +30,15 @@ In short, the `MultiAssayExperiment` class allows you to store different _types_
 Every `MultiAssayExperiment` object consists of 3 types of data:
 
 1. *experiments* 
-	- used for storing the actual values/observations
+	- used for storing the actual values/observations (e.g., a matrix with read counts per gene per sample)
 	- think of it as a list of tables, one for every assay/type of experiment
 	- can be accessed in numerous ways (see below), e.g. via `assays(mae)`, which will return a list of value matrices for every single experiment
 	- the values for every type of assay can be supplied as simple matrices or `SummarizedExperiment` or any kind of data set that meets some basic requirements (see the slides for more info)
 2. *colData* 
   - `DataFrame` (bioconductor's improved `data.frame`) with __information about the samples__, e.g., details about the patients, different mice, different time points - whatever you choose to be your smallest unit of interest
 3. *sampleMap* 
-  * this is what binds everything (i.e., the values from the assays and the sample information) together
-  * for every single column of _every_ type of experiment, you this contains the information about which patient it belongs to, i.e., it provides the mapping between the row.names of `colData` (e.g. patient IDs) and the col.names of all the assays stored in `experiments`
+  * this is what connects everything (i.e., the values from the assays and the sample information)
+  * for every single column of _every_ type of experiment, this table provides the mapping between the `row.names` of `colData` (e.g. patient IDs) and the `col.names` of all the assays stored in `experiments`
   * needs three columns:
     * "assay": e.g., "RNAseq", "proteomics"
     * "primary": e.g. identifier of the patient or the mouse or the time point or whatever you choose as the content of the rows for `colData`)
@@ -88,7 +88,7 @@ Features:
  assays() - convert ExperimentList to a SimpleList of matrices
 ```
 
-There is data from 5 types of assay:
+In this particular example MultiAssayExperiment object, there is data from 5 types of assay:
 
   - RNASeq2GeneNorm: gene mRNA abundance by RNA-seq
   - gistict: GISTIC genomic copy number by gene
@@ -105,7 +105,7 @@ To get a feeling for what the different aspects look like, we took the object ap
 #### Get the patient info
 
 ```
-clindat <- colData(miniACC)
+> clindat <- colData(miniACC)
 ```
 
 Check the [clindat_colData.txt file](https://raw.githubusercontent.com/abcdbug/dbug/master/R_MultiAssayExperiment/clindat_colData.txt) above to see what that actually looks like.
@@ -116,11 +116,11 @@ Check the [clindat_colData.txt file](https://raw.githubusercontent.com/abcdbug/d
 Note the different ways to extract the actual data!
 
 ```
-rnaseq <- assays(miniACC)[[1]] # assays returns a list of all assay data; you have to know that RNAseq is stored in the first one or explicitly specify the name
-gistic <- miniACC[[2]] # again, you just know that the values for gistic are stored in the second array
-mutations <- assay(miniACC, 4) # here we know that mutation values are stored in the fourth assay
-protein <- miniACC[["RPPAArray"]] 
-miRNAseq <- assays(miniACC)[["miRNASeqGene"]]
+> rnaseq <- assays(miniACC)[[1]] # assays returns a list of all assay data; you have to know that RNAseq is stored in the first one or explicitly specify the name
+> gistic <- miniACC[[2]] # again, you just know that the values for gistic are stored in the second array
+> mutations <- assay(miniACC, 4) # here we know that mutation values are stored in the fourth assay
+> protein <- miniACC[["RPPAArray"]] 
+> miRNAseq <- assays(miniACC)[["miRNASeqGene"]]
 ```
 
 You can see some of the resulting files in this repo: [miRNAseq.txt](https://raw.githubusercontent.com/abcdbug/dbug/master/R_MultiAssayExperiment/miRnaseq.txt), [mutations.txt](https://raw.githubusercontent.com/abcdbug/dbug/master/R_MultiAssayExperiment/mutations.txt), [rnaseq.txt](https://raw.githubusercontent.com/abcdbug/dbug/master/R_MultiAssayExperiment/rnaseq.txt)
@@ -129,10 +129,10 @@ You can see some of the resulting files in this repo: [miRNAseq.txt](https://raw
 #### Extract the `sampleMap` 
 
 ```
-map <- sampleMap(miniACC)
+> map <- sampleMap(miniACC)
 ```
 
-[sampleMap](https://raw.githubusercontent.com/abcdbug/dbug/master/R_MultiAssayExperiment/sampleMap.txt)
+This is what the [sampleMap](https://raw.githubusercontent.com/abcdbug/dbug/master/R_MultiAssayExperiment/sampleMap.txt) should look like.
 
 <a id="MAE"></a>
 ### Generate a `MultiAssayExperiment` object 
@@ -173,8 +173,10 @@ harmonizing input:
 ```
 #### Subsetting fun <a id="subsetting"></a>
 
+Let's retrieve the values from the RNAseq for the DIABLO gene for the first two patients.
+Remember: `mae[ rows_of_experiments (e.g. genes), columns_of_experiments(e.g. patients), type_of_experiment ]`
+
 ```
-# let's retrieve the values from the RNAseq for the DIABLO gene for the first two patients
 > assay(miniACC[ "DIABLO", 1:2 , "RNASeq2GeneNorm"])
 harmonizing input:
   removing 13 colData rownames not in sampleMap 'primary'
@@ -200,19 +202,23 @@ For more details, see the vignettes at the bioconductor page!
 
 ```
 library(MultiAssayExperiment)
-data(miniACC)
+data(miniACC) # loading example data
+
+# split the MAE into its assays, observations, and sampleMap
 rnaseq <- assays(miniACC)[[1]]
 gistic <- miniACC[[2]]
 protein <- miniACC[["RPPAArray"]]
 mutations <- assay(miniACC, 4)
-clindat <- colData(miniACC)
-map <- sampleMap(miniACC)
+clindat <- colData(miniACC) # experiments
+map <- sampleMap(miniACC) # sampleMap
  
+# put it all back together
 mylist <- list(RNASeq2GeneNorm=rnaseq,
                gistict=gistic,
                RPPAArray=protein,
                Mutations=mutations)
 mae <- MultiAssayExperiment(experiments=mylist, colData=clindat, sampleMap=map)
+
 mae["DIABLO", , ]
 assays(mae["DIABLO",  , ])
 assay(mae["DIABLO",  , ])
