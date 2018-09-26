@@ -15,8 +15,6 @@ For the collection of future topics, see this [issue here](https://github.com/ab
 
 | Date | Topic | Presenter |
 |------|-------|-----------|
-| 2018-04-19 | storing & documenting data in R packages | Friederike Dündar |
-| 2018-03-08 | gUtils+bamUtils | Evan Biederstedt |
 | 2017-11-16 | [One class to bind them all: the MultiAssayExperiment R class](https://github.com/abcdbug/dbug/tree/master/R_MultiAssayExperiment) | [Levi Waldon & Marcel Ramos](http://waldronlab.org/)|
 | 2017-09-21 | [Hot off the press: JupyterCon & latest Jupyter Notebook developments](https://github.com/abcdbug/dbug/tree/master/JupyterNotebooks_Update) | [Peter Oxley](mailto:pro2004@med.cornell.edu) |
 | 2017-08-03 | Docker for HPC environments: Singularity | Vanessa Borcherding |
